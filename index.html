@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student attendance</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class=" p-8">
+    <h1 class="text-center text-4xl font-bold underline ">Student attendance</h1>
+    <div 
+    onclick="toggleModal()"
+    id="popUp"
+        class=" hidden fixed inset-0 z-50 overflow-auto bg-black/30  flex items-center justify-center backdrop-blur-xs">
+        <div class="bg-white w-full max-w-md mx-auto rounded-xl shadow-2xl overflow-hidden transform transition-all">
+            <div class="bg-blue-600 px-6 py-4 flex justify-between items-center">
+                <h3 class="text-white text-lg font-bold">Register student</h3>
+                <button class="text-white hover:text-grey-200 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="red">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div>
+                    <label for="studentId" class="block text-gray-700 text-sm font-bold mb-2">Student ID</label>
+                    <input type="text" id="studentId"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="studentId" class="block text-gray-700 text-sm font-bold mb-2">Student Name</label>
+                    <input type="text" id="studentName"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+                </div>
+                <div class="bg-gray-50 px-6 py-4 flex justify-end gap-3">
+                    <button
+                        class="bg-gray-300 hover:bg-gray-400  text-gray-800 font-bold py-2 px-4 rounded focus:outline-none">Cancel</button>
+                    <button
+                        class="bg-blue-600 hover:bg-blue-700 text-white  font-bold py-2 px-4 rounded focus:outline-none shadow">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 py-8">
+        <div class="bg-white shadow-md rounded my-6 overflow-x-auto">
+            <table class="min-w-full w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        <th class="py-3 px-6 text-left">Student ID</th>
+                        <th class="py-3 px-6 text-left">Name</th>
+                        <th class="py-3 px-6 text-left">Status</th>
+                        <th class="py-3 px-6 text-left">Time</th>
+                        <th class="py-3 px-6 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody" class="text-black/40 text-sm font-light">
+                    <tr>
+                        <td colspan="5" class="py-3 px-6 text-center">No students registered yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button class="fixed bottom-8 right-8 shadow-2xl bg-gray-800 rounded-full pt-3 px-4 py-4 "  onclick="toggleModal()">➕ </button>
+    </div>
+ 
+    <script src="script.js"></script>
+</body>
+
+</html>
